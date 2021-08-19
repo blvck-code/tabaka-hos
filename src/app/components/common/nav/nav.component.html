@@ -1,0 +1,245 @@
+<header class="header header-layout1">
+  <div class="header-topbar">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <div class="d-flex align-items-center justify-content-between">
+            <ul
+              class="
+                contact__list
+                d-flex
+                flex-wrap
+                align-items-center
+                list-unstyled
+                mb-0
+              "
+            >
+              <li>
+                <button class="miniPopup-emergency-trigger" type="button">
+                  24/7 Emergency
+                </button>
+                <div
+                  id="miniPopup-emergency"
+                  class="miniPopup miniPopup-emergency text-center"
+                >
+                  <div class="emergency__icon">
+                    <i class="icon-call3"></i>
+                  </div>
+                  <a href="tel:+201061245741" class="phone__number">
+                    <i class="icon-phone"></i> <span>+254 700000000</span>
+                  </a>
+                  <p>
+                    Please feel free to contact our friendly reception staff
+                    with any general or medical enquiry.
+                  </p>
+                </div>
+                <!-- /.miniPopup-emergency -->
+              </li>
+              <li>
+                <i class="icon-phone"></i
+                ><a href="tel:+254721361953"
+                  >Emergency Line: (254) 721-361-953</a
+                >
+              </li>
+              <li>
+                <i class="icon-location"></i
+                ><a href="JavaScript:Void(0)"
+                  >Location: Tabaka-Kisii County, Kenya</a
+                >
+              </li>
+              <li>
+                <i class="icon-clock"></i
+                ><a href="JavaScript:Void(0)">Mon - Fri: 24/7 hours</a>
+              </li>
+            </ul>
+            <!-- /.contact__list -->
+            <div class="d-flex">
+              <ul class="social-icons list-unstyled mb-0 mr-30">
+                <li>
+                  <a href="JavaScript:Void(0)"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="JavaScript:Void(0)"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="JavaScript:Void(0)"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                </li>
+              </ul>
+              <!-- /.social-icons -->
+            </div>
+          </div>
+        </div>
+        <!-- /.col-12 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.header-top -->
+  <nav class="navbar navbar-expand-lg sticky-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/']">
+        <img
+          style="max-width: 200px; width: 100%"
+          src="assets/images/logo/logo.png"
+        />
+      </a>
+      <button class="navbar-toggler" type="button">
+        <span class="menu-lines"><span></span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav__item has-dropdown">
+            <a
+              [routerLink]="['/home']"
+              [routerLinkActive]="['active']"
+              class="nav__item-link"
+              >Home</a
+            >
+          </li>
+          <!-- /.nav-item -->
+          <li class="nav__item has-dropdown">
+            <a
+              href="index.html#"
+              data-toggle="dropdown"
+              class="dropdown-toggle nav__item-link"
+              >Management Team</a
+            >
+            <ul class="dropdown-menu">
+              <!-- /.nav-item -->
+              <li class="nav__item">
+                <a [routerLink]="['/senior-management']" class="nav__item-link"
+                  >Management Team</a
+                >
+              </li>
+              <!-- /.nav-item -->
+              <li class="nav__item">
+                <a [routerLink]="['/senior-management']" class="nav__item-link"
+                  >Director</a
+                >
+              </li>
+              <!-- /.nav-item -->
+              <li class="nav__item">
+                <a [routerLink]="['/contact']" class="nav__item-link"
+                  >Administrator</a
+                >
+              </li>
+              <!-- /.nav-item -->
+              <li class="nav__item">
+                <a [routerLink]="['/contact']" class="nav__item-link"
+                  >Finance HR</a
+                >
+              </li>
+              <!-- /.nav-item -->
+              <li class="nav__item">
+                <a [routerLink]="['/contact']" class="nav__item-link"
+                  >Chaplaing</a
+                >
+              </li>
+              <!-- /.nav-item -->
+              <li class="nav__item">
+                <a [routerLink]="['/contact']" class="nav__item-link">Matron</a>
+              </li>
+              <!-- /.nav-item -->
+              <li class="nav__item">
+                <a [routerLink]="['/contact']" class="nav__item-link"
+                  >Deputy Matron</a
+                >
+              </li>
+              <!-- /.nav-item -->
+            </ul>
+            <!-- /.dropdown-menu -->
+          </li>
+          <!-- /.nav-item -->
+          <li class="nav__item has-dropdown">
+            <a
+              href="index.html#"
+              data-toggle="dropdown"
+              class="dropdown-toggle nav__item-link"
+              >Services</a
+            >
+            <ul class="dropdown-menu">
+              <li class="nav__item">
+                <a [routerLink]="['/specialistcenter']" class="nav__item-link"
+                  >OPD</a
+                >
+              </li>
+              <li class="nav__item">
+                <a [routerLink]="['/lab']" class="nav__item-link">IP</a>
+              </li>
+              <li class="nav__item">
+                <a [routerLink]="['/lab']" class="nav__item-link">Laboratory</a>
+              </li>
+              <li class="nav__item">
+                <a [routerLink]="['/lab']" class="nav__item-link">Radiology</a>
+              </li>
+              <li class="nav__item">
+                <a [routerLink]="['/lab']" class="nav__item-link">Pharmacy</a>
+              </li>
+              <li class="nav__item">
+                <a [routerLink]="['/lab']" class="nav__item-link">Maternity</a>
+              </li>
+              <li class="nav__item">
+                <a [routerLink]="['/lab']" class="nav__item-link">Ambulance</a>
+              </li>
+              <!-- /.nav-item -->
+              <li class="nav__item">
+                <a [routerLink]="['/nursing-services']" class="nav__item-link"
+                  >Nursing Home</a
+                >
+              </li>
+              <!-- /.nav-item -->
+              <li class="nav__item">
+                <a [routerLink]="['/pharmacy']" class="nav__item-link"
+                  >Theatre</a
+                >
+              </li>
+              <!-- /.nav-item -->
+            </ul>
+            <!-- /.dropdown-menu -->
+          </li>
+          <!-- /.nav-item -->
+          <li class="nav__item has-dropdown">
+            <a
+              href="index.html#"
+              data-toggle="dropdown"
+              class="dropdown-toggle nav__item-link"
+              >News & Media</a
+            >
+            <ul class="dropdown-menu">
+              <li class="nav__item">
+                <a [routerLink]="['/lab']" class="nav__item-link"
+                  >Advertisements</a
+                >
+              </li>
+              <li class="nav__item">
+                <a [routerLink]="['/lab']" class="nav__item-link">Downloads</a>
+              </li>
+              <li class="nav__item">
+                <a [routerLink]="['/lab']" class="nav__item-link"
+                  >Latest News</a
+                >
+              </li>
+            </ul>
+            <!-- /.dropdown-menu -->
+          </li>
+          <!-- /.nav-item -->
+        </ul>
+        <!-- /.navbar-nav -->
+        <button class="close-mobile-menu d-block d-lg-none">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- /.navabr -->
+</header>
+<!-- /.Header -->

@@ -1,4 +1,5 @@
 build website:
+  image: node:16
   script:
     - npm install
     - npm i @angular/cli

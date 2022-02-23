@@ -25,5 +25,6 @@ test website:
   script:
     - npm install
     - npm i @angular/cli
-    - ng serve
+    - ng serve &
+    - sleep 3
     - curl "http://localhost:4200/" | grep -q "Tabaka"

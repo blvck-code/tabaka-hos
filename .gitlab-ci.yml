@@ -26,8 +26,10 @@ test website:
   script:
     - npm install
     - npm i @angular/cli
-    - ng serve
-    - curl "http://localhost:4200/" | grep -q "Tabaka"
+    - npm run start &
+    - sleep 30
+    - curl "http://localhost:4200/" | tac | tac | grep -q "Tabaka"
+
 
 deploy to surge:
   stage: deploy

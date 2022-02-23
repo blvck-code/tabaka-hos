@@ -16,5 +16,4 @@ build website:
 test artifact:
   stage: test
   script:
-    - grep "Tabaka" ./src/index.html
-    - grep "Oluoch" ./src/index.html
+    - grep -q "Tabaka" ./src/index.html

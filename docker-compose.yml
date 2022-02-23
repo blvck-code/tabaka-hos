@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  frontend:
+    build: .
+    image: &tabaka frontend
+    restart: unless-stopped
+    container_name: tabaka_server
+    volumes:
+      - ./config/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./config/nginx/ssl/cert.crt:/etc/nginx/cert.crt
+      - ./config/nginx/ssl/cert.key:/etc/nginx/cert.key
+      - ./config/nginx/ssl/cert.pem:/etc/nginx/cert.pem
+#      - ./naiparq-web-portal:/naiparq-web-portal
+    ports:
+      - 57:80
+    networks:
+      - tabaka_network
+
+networks:
+  tabaka_network:
+    driver: bridge
+
+

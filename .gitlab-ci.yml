@@ -27,4 +27,4 @@ test website:
     - npm i @angular/cli
     - ng serve &
     - sleep 3
-    - curl "http://localhost:4200/" | grep -q "Tabaka"
+    - curl "http://localhost:4200/" | tac | tac | grep -q "Tabaka"

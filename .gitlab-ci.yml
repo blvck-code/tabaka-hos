@@ -26,6 +26,7 @@ test website:
   script:
     - npm install
     - npm i @angular/cli
+<<<<<<< HEAD
     - ng serve
     - curl "http://localhost:4200/" | grep -q "Tabaka"
 
@@ -35,3 +36,8 @@ deploy to surge:
     - npm install --global surge
     - surge --project ./src --domain next-basket.surge.sh
 
+=======
+    - npm run start &
+    - sleep 30
+    - curl "http://localhost:4200/" | tac | tac | grep -q "Tabaka"
+>>>>>>> 9301d6860b6885b02bd2db800fd1a539777abfe1

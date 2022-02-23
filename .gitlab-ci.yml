@@ -14,6 +14,16 @@ build website:
     paths:
       - ./src
 test artifact:
+  image: alpine
   stage: test
   script:
     - grep -q "Tabaka" ./src/index.html
+
+test website:
+  image: node:16
+  stage: test
+  script:
+    - npm install
+    - npm i @angular/cli
+    - ng serve
+    - curl "http://localhost:4200" | grep -q "Tabaka"

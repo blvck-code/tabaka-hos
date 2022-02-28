@@ -1,6 +1,5 @@
 stages:
   - build
-  - test
 
 build website:
   stage: build

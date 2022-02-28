@@ -49,6 +49,6 @@ test deployment:
   image: alpine
   stage: deployment test
   script:
-    - apk add --no-chache curl
+    - apk add --no-cache curl
     - curl -s "https://next-basket.surge.sh/" | grep -q "Tabaka"
     - curl -s "https://next-basket.surge.sh/" | grep -q "$CI_COMMIT_SHORT_SHA"

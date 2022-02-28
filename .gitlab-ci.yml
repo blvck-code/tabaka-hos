@@ -24,7 +24,6 @@ build website:
     - npm i @angular/cli
     - npm run build
     - sed -i "s/%%VERSION%%/$CI_COMMIT_SHORT_SHA/" ./dist/tabaka-hos/index.html
-    - ls
 
   artifacts:
     paths:
@@ -44,6 +43,18 @@ test website:
     - sleep 30
     - curl "http://localhost:4200/" | tac | tac | grep -q "Tabaka"
 
+deploy review:
+  stage: deploy review
+  only:
+    - merge_requests
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://next-$CI_ENVIRONMENT_SLUG.sh
+  script:
+    - npm run build
+    - surge --project ./dist/tabaka-hos --domain next-$CI_ENVIRONMENT_SLUG.sh
+
+
 deploy staging:
   stage: deploy staging
   environment:
@@ -54,7 +65,6 @@ deploy staging:
   script:
     - npm install --global surge
     - npm run build
-    - sleep 30
     - surge --project ./dist/tabaka-hos --domain next-staging.surge.sh
 
 deploy production:

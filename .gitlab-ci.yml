@@ -3,6 +3,7 @@ image: node:16
 stages:
   - build
   - test
+  - deploy review
   - deploy staging
   - deploy production
   - production tests

@@ -51,7 +51,9 @@ deploy staging:
     url: http://$STAGING_DOMAIN
   script:
     - npm install --global surge
-    - surge --project ./src --domain next-staging.surge.sh
+    - npm run build
+    - sleep 30
+    - surge --project ./dist/tabaka-hos --domain next-staging.surge.sh
 
 deploy production:
   stage: deploy production

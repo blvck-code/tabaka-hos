@@ -3,6 +3,7 @@ image: node:16
 stages:
   - build
   - test
+  - deploy review
   - deploy staging
   - deploy production
   - production tests
@@ -51,9 +52,11 @@ deploy review:
     name: review/$CI_COMMIT_REF_NAME
     url: https://next-$CI_ENVIRONMENT_SLUG.sh
   script:
+    - npm install --global surge
     - npm run build
+    - sleep 30
+    - ls
     - surge --project ./dist/tabaka-hos --domain next-$CI_ENVIRONMENT_SLUG.sh
-
 
 deploy staging:
   stage: deploy staging

@@ -60,6 +60,8 @@ deploy production:
   environment:
     name: staging
     url: http://$PRODUCTION_DOMAIN
+  when: manual
+  allow_failure: false
   script:
     - npm install --global surge
     - ls

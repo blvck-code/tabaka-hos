@@ -64,6 +64,8 @@ deploy production:
   allow_failure: false
   script:
     - npm install --global surge
+    - npm run build
+    - sleep 30
     - ls
     - surge --project ./dist/tabaka-hos --domain next-basket.surge.sh
 

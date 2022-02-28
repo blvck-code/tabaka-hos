@@ -7,6 +7,10 @@ stages:
   - deploy production
   - production tests
 
+variables:
+  STAGING_DOMAIN: next-staging.surge.sh
+  PRODUCTION_DOMAIN: next-basket.surge.sh
+
 cache:
   key: $CI_COMMIT_SHORT_SHA
   paths:
@@ -44,7 +48,7 @@ deploy staging:
   stage: deploy staging
   environment:
     name: staging
-    url: next-staging.surge.sh
+    url: HTTP://$STAGING_DOMAIN
   script:
     - npm install --global surge
     - surge --project ./src --domain next-staging.surge.sh
@@ -53,7 +57,7 @@ deploy production:
   stage: deploy production
   environment:
     name: staging
-    url: next-basket.surge.sh
+    url: http://$PRODUCTION_DOMAIN
   script:
     - npm install --global surge
     - ls

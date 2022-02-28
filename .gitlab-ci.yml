@@ -19,7 +19,6 @@ test artifact:
     - grep -q "Tabaka" ./src/index.html
 
 test website:
-  ima
   stage: test
   script:
     - npm install

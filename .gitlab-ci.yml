@@ -6,6 +6,11 @@ stages:
   - deploy
   - deployment test
 
+cache:
+  key: $CI_COMMIT_SHORT_SHA
+  paths:
+    - node_modules/
+
 build website:
   stage: build
   script:
@@ -37,7 +42,8 @@ deploy to surge:
   stage: deploy
   script:
     - npm install --global surge
-    - surge --project ./dist/tabaka-hos --domain next-basket.surge.sh
+    - ls
+    - surge --project ./src --domain next-basket.surge.sh
 
 test deployment:
   image: alpine
@@ -45,3 +51,4 @@ test deployment:
   script:
     - apk add --no-chache curl
     - curl -s "https://next-basket.surge.sh/" | grep -q "Tabaka"
+    - curl -s "https://next-basket.surge.sh/" | grep -q "$CI_COMMIT_SHORT_SHA"

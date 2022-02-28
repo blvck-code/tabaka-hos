@@ -6,11 +6,9 @@ build website:
   stage: build
   image: node:16
   script:
-    - echo $CI_COMMIT_SHORT_SHA
     - npm install
     - npm i @angular/cli
     - npm run build
-    - sed -i "s/%%VERSION%%/$CI_COMMIT_SHORT_SHA/" ./src/index.html
 
   artifacts:
     paths:

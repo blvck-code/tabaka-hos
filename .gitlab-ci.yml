@@ -37,7 +37,7 @@ deploy to surge:
   stage: deploy
   script:
     - npm install --global surge
-    - surge --project ./dist/tabaka-hos --domain next-basket.surge.sh
+    - surge --project ./src --domain next-basket.surge.sh
 
 test deployment:
   image: alpine

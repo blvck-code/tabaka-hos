@@ -13,7 +13,7 @@ build website:
     - npm install
     - npm i @angular/cli
     - npm run build
-    - sed -i "s/%%VERSION%%/$CI_COMMIT_SHORT_SHA/" ./dist/index.html
+    - sed -i "s/%%VERSION%%/$CI_COMMIT_SHORT_SHA/" ./src/index.html
 
   artifacts:
     paths:
@@ -22,7 +22,7 @@ test artifact:
   image: alpine
   stage: test
   script:
-    - grep -q "Tabaka" ./dist/index.html
+    - grep -q "Tabaka" ./src/index.html
 
 test website:
   stage: test
@@ -37,7 +37,7 @@ deploy to surge:
   stage: deploy
   script:
     - npm install --global surge
-    - surge --project ./src --domain next-basket.surge.sh
+    - surge --project ./dist/tabaka-hos --domain next-basket.surge.sh
 
 test deployment:
   image: alpine

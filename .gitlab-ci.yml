@@ -53,6 +53,7 @@ deploy review:
     url: https://next-$CI_ENVIRONMENT_SLUG.sh
   script:
     - npm run build
+    - sleep 30
     - surge --project ./dist/tabaka-hos --domain next-$CI_ENVIRONMENT_SLUG.sh
 
 

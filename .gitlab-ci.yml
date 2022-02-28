@@ -4,6 +4,7 @@ stages:
   - build
   - test
   - deploy
+  - deployment test
 
 build website:
   stage: build
@@ -32,9 +33,15 @@ test website:
     - sleep 30
     - curl "http://localhost:4200/" | tac | tac | grep -q "Tabaka"
 
-
 deploy to surge:
   stage: deploy
   script:
     - npm install --global surge
     - surge --project ./src --domain next-basket.surge.sh
+
+test deployment:
+  image: alpine
+  stage: deployment test
+  script:
+    - apk add --no-chache curl
+    - curl -s "https://next-basket.surge.sh/" | grep -q "Tabaka"

@@ -8,4 +8,4 @@ build website:
   script:
     - npm install
     - npm i @angular/cli
-    - npm run build
+    - npm run buils

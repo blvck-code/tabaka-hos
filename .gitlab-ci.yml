@@ -1,0 +1,11 @@
+image: node:16
+
+stages:
+  - build
+
+build website:
+  stage: build
+  script:
+    - npm install
+    - npm i @angular/cli
+    - npm run buils

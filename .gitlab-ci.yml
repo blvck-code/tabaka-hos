@@ -8,7 +8,7 @@ deploy to vercel:
   stage: deploy
   script:
     - npm install
-    - npm i -g @angular/ci
+    - npm i -g @angular/cli
     - echo $DEPLOYMENT_URL$(vercel -t $VERCEL_TOKEN --confirm)
 
   artifacts:

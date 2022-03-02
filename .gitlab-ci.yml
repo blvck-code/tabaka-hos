@@ -16,8 +16,8 @@ install_dependencies:
     key:
       files:
         - package-lock.json
-      paths:
-        - node_modules
+    paths:
+      - node_modules
 
 link:
   image: node:16

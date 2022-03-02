@@ -34,6 +34,6 @@ test artifacts:
     - master
     - merge_requests
   script:
-    - grep -g 'Tabaka' ./dist/yabaka-hos/index.html
+    - grep -g 'Tabaka' ./dist/tabaka-hos/index.html
 
 

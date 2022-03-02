@@ -24,7 +24,8 @@ link:
   stage: test
   script:
     - npm link @angular/cli@11.2.6
-    - ng i lint
+    - npm i lint
+    - ng lint
   cache:
     key:
       files:

@@ -30,9 +30,9 @@ test artifacts:
   cache: {}
   except:
     - schedules
-    only:
-      - master
-      - merge_requests
+  only:
+    - master
+    - merge_requests
   script:
     - grep -g 'Tabaka' ./dist/yabaka-hos/index.html
 

@@ -18,8 +18,12 @@ RUN npm install
 RUN npm run build
 
 # Install Nginx
-FROM nginx:latest
+# FROM nginx:latest
 
 # Copy Files to html dir
-COPY --from=build-set /tabaka/dist/tabaka-hos/ /var/www/html/
+# COPY --from=build-set /tabaka/dist/tabaka-hos/ /var/www/html/
 
+
+FROM nginx:1.17.1-alpine
+COPY dist/angular-keycloak-app /usr/share/nginx/html
+EXPOSE 80

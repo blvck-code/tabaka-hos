@@ -1,11 +1,66 @@
 image: node:16
 
 stages:
+  - dependencies
+  - test
   - build
 
-build website:
-  stage: build
+install_dependencies:
+  image: node:16
+  stage: dependencies
   script:
     - npm install
-    - npm i @angular/cli
+  only:
+    - master
+  cache:
+    key:
+      files:
+        - package-lock.json
+      paths:
+        - node_modules
+
+link:
+  image: node:16
+  stage: test
+  script:
+    - npm link @angular/cli11.2.6
+    - ng lint
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+
+test:
+  image: markhobson/node-chrome:latest
+  stage: test
+  script:
+    - npm link @angular/cli@11.2.6
+    - npm test -- --browsers=['Chrome', 'ChromeHeadless'] --watch=false
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+    
+build_image:
+  image: node:16
+  stage: build
+  script:
+    - npm link @angular/cli@11.2.6
     - npm run build
+  artifacts:
+    paths:
+      - ./dist/tabaka-hos
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+

@@ -2,32 +2,12 @@ image: node
 
 stages:
   - deploy
-  - test
 
-deploy to vercel:
-  stage: deploy
+build website:
+  stage: build
   script:
+    - echo $CI_COMMIT_SHORT_SHA
     - npm install
-    - npm i -g @angular/cli
-    - echo $DEPLOYMENT_URL$(vercel -t $VERCEL_TOKEN --confirm)
-
-  artifacts:
-    when: on_success
-    paths:
-      - vercel_deployment_url.txt
-
-cypress test:
-  image: cypress/browsers:node12.16.2-chrome81-ff75
-  stage: test
-
-  script:
-    - touch vercel_deployment_url.txt
-    - DEPLOYMENT_URL=$(cat vercel_deployment_url.txt)
-    - npm ci
-    - $(npm bin)/cypress run --env CYPRESS_BASE_URL=$DEPLOYMENT_URL
-
-  artifacts:
-    when: on_success
-    paths:
-      - cypress/screenshots
-      - cypress/videos
+    - npm i @angular/cli
+    - npm run build
+    - ls

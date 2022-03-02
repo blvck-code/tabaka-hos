@@ -23,7 +23,7 @@ link:
   image: node:16
   stage: test
   script:
-    - npm link @angular/cli11.2.6
+    - npm link @angular/cli@11.2.6
     - ng lint
   cache:
     key:

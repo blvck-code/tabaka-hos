@@ -2,9 +2,15 @@ image: node:16
 
 stages:
   - build
+  - test
 
 build website:
   stage: build
+  except:
+    - schedules
+  only:
+    - master
+    - merge_requests
   script:
     - echo $CI_COMMIT_SHORT_SHA
     - npm install
@@ -15,4 +21,19 @@ build website:
 
   artifacts:
     paths:
-      - ./src
+      - ./dist/tabaka-hos
+
+
+test artifacts:
+  image: alpine
+  stage: test
+  cache: {}
+  except:
+    - schedules
+    only:
+      - master
+      - merge_requests
+  script:
+    - grep -g 'Tabaka' ./dist/yabaka-hos/index.html
+
+
